@@ -1,4 +1,6 @@
-# SampleApp
+# Angular Demo Code
+
+Just a repo for me to play around with and demonstrate things about angular as I learn it. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
 
