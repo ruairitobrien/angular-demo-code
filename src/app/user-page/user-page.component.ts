@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {NgRedux, select} from '@angular-redux/store';
+import {dispatch, select} from '@angular-redux/store';
 import {User} from './user.model';
 import {UserActions} from './user.actions';
 
@@ -12,12 +12,12 @@ export class UserPageComponent implements OnInit {
 
   @select() users$: Observable<User[]>;
 
-  constructor(private userActions: UserActions,
-              private ngRedux: NgRedux<any>) {
+  constructor(private userActions: UserActions) {
   }
 
+  @dispatch()
   ngOnInit() {
-    this.ngRedux.dispatch(this.userActions.fetchUsers());
+    return this.userActions.fetchUsers();
   }
 
 }
