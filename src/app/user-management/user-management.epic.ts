@@ -3,21 +3,21 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/of';
 import {Injectable} from '@angular/core';
-import {UserActions} from './user.actions';
+import {UserManagementActions} from './user-management.actions';
 import {Observable} from 'rxjs/Observable';
 import {User} from './user.model';
 
 @Injectable()
-export class UserEpic {
-  constructor(private userActions: UserActions) {
-  }
-
+export class UserManagementEpic {
   fetchUsers = (action$) => {
-    return action$.ofType(UserActions.FETCH_USERS)
+    return action$.ofType(UserManagementActions.FETCH_USERS)
       .mergeMap(() => {
         return this.pretendToGetUsers()
           .map(this.userActions.fetchUsersSucceeded);
       });
+  }
+
+  constructor(private userActions: UserManagementActions) {
   }
 
   pretendToGetUsers(): Observable<User[]> {

@@ -6,8 +6,8 @@ import {combineEpics, createEpicMiddleware} from 'redux-observable';
 
 import {AppComponent} from './app.component';
 import {rootReducer} from './reducers';
-import {UserPageModule} from './user-page/user-page.module';
-import {UserEpic} from './user-page/user.epic';
+import {UserManagementModule} from './user-management/user-management.module';
+import {UserManagementEpic} from './user-management/user-management.epic';
 
 @NgModule({
   declarations: [
@@ -16,13 +16,13 @@ import {UserEpic} from './user-page/user.epic';
   imports: [
     BrowserModule,
     NgReduxModule,
-    UserPageModule
+    UserManagementModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(private userEpic: UserEpic,
+  constructor(private userEpic: UserManagementEpic,
               ngRedux: NgRedux<{}>) {
 
     const epics = combineEpics(

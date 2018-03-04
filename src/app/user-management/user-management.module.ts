@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import {UserPageComponent} from './user-page.component';
-import {UserActions} from './user.actions';
-import {UserEpic} from './user.epic';
+import {UserManagementComponent} from './user-management.component';
+import {UserManagementActions} from './user-management.actions';
+import {UserManagementEpic} from './user-management.epic';
 import {UsersBadWayComponent} from './users-bad-way/users-bad-way.component';
 import {UsersLessBadWayComponent} from './users-less-bad-way/users-less-bad-way.component';
 
@@ -14,15 +14,15 @@ import {UsersLessBadWayComponent} from './users-less-bad-way/users-less-bad-way.
   declarations: [
     UsersBadWayComponent,
     UsersLessBadWayComponent,
-    UserPageComponent
+    UserManagementComponent
   ],
   exports: [
-    UserPageComponent
+    UserManagementComponent
   ],
   providers: [
-    UserActions,
-    UserEpic
+    UserManagementActions,
+    UserManagementEpic
   ]
 })
-export class UserPageModule {
+export class UserManagementModule {
 }

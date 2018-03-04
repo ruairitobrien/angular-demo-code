@@ -9,6 +9,6 @@ import {User} from '../user.model';
 })
 export class UsersBadWayComponent {
 
-  @select() users$: Observable<User>;
+  @select(['userManagement', 'users']) users$: Observable<User[]>;
 
 }

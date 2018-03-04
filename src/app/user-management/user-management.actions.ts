@@ -1,27 +1,22 @@
 import {Injectable} from '@angular/core';
 import {User} from './user.model';
-
-export interface AppAction {
-  type: string;
-  payload?: any;
-  error?: false;
-}
+import {AppAction} from '../app-action';
 
 @Injectable()
-export class UserActions {
+export class UserManagementActions {
 
   static FETCH_USERS = 'user-page/FETCH_USERS';
   static FETCH_USERS_SUCCEEDED = 'user-page/FETCH_USERS_SUCCEEDED';
 
   fetchUsers(): AppAction {
     return {
-      type: UserActions.FETCH_USERS
+      type: UserManagementActions.FETCH_USERS
     };
   }
 
   fetchUsersSucceeded(users: User[]): AppAction {
     return {
-      type: UserActions.FETCH_USERS_SUCCEEDED,
+      type: UserManagementActions.FETCH_USERS_SUCCEEDED,
       payload: users
     };
   }
