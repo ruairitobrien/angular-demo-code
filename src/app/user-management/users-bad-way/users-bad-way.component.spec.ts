@@ -20,10 +20,10 @@ describe('UsersBadWayComponent', () => {
       providers: [UserManagementActions]
     })
     .compileComponents();
-    MockNgRedux.reset();
   }));
 
   beforeEach(() => {
+    MockNgRedux.reset();
     usersSelector = MockNgRedux.getSelectorStub(['userManagement', 'users']);
     ngRedux = TestBed.get(NgRedux);
     spyOn(ngRedux, 'dispatch');

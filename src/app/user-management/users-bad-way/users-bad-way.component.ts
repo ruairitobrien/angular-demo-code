@@ -21,4 +21,9 @@ export class UsersBadWayComponent implements OnInit {
     return this.userManagementActions.fetchUsers();
   }
 
+  @dispatch()
+  deleteUser(user: User) {
+    return this.userManagementActions.deleteUser(user);
+  }
+
 }

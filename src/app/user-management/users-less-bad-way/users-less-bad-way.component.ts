@@ -1,15 +1,21 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {User} from '../user.model';
 
 @Component({
   selector: 'app-users-less-bad-way',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  templateUrl: './users-less-bad-way.component.html'
 })
-export class UsersLessBadWayComponent implements OnInit {
+export class UsersLessBadWayComponent {
 
-  constructor() { }
+  @Input()
+  users: User[] = [];
 
-  ngOnInit() {
+  @Output()
+  onDeleteUser: EventEmitter<User> = new EventEmitter<User>();
+
+
+  deleteUser(user: User) {
+    this.onDeleteUser.emit(user);
   }
 
 }

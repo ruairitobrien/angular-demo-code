@@ -3,6 +3,6 @@
   <app-users-bad-way></app-users-bad-way>
 
 
-  <app-users-less-bad-way></app-users-less-bad-way>
+  <app-users-less-bad-way [users]="users$ | async" (onDeleteUser)="deleteUser($event)"></app-users-less-bad-way>
 
 </div>
